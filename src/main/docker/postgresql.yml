@@ -1,0 +1,12 @@
+version: '2'
+services:
+    rent-postgresql:
+        container_name: rent-postgresql
+        image: postgres:9.5.2
+        # volumes:
+        #     - ~/volumes/jhipster/rent/postgresql/:/var/lib/postgresql/
+        environment:
+            - POSTGRES_USER=rent
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432
