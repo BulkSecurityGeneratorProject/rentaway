@@ -1,13 +1,50 @@
 <div ng-cloak>
-    <div class="row">
-        <div class="col-md-4">
-            <span class="hipster img-responsive img-rounded"></span>
-        </div>
-        <div class="col-md-8">
-            <h1>Welcome, Java Hipster!</h1>
-            <p class="lead">This is your homepage</p>
+	<div class="row">
 
-            <div ng-switch="vm.isAuthenticated()">
+		<div class="col-md-12">
+			<div class="row text-center">
+				<h1>
+					<strong>Looking for a furnish room for rent?</strong>
+				</h1>
+				<h2>Don't worry, we will help you</h2>
+				<span class="input-group-btn"> 
+					<button type="button" class="btn btn-raised btn-lg btn-success">How this works?</button> 
+					<button type="button" class="btn btn-raised btn-lg btn-info">Running Offers</button>
+				</span>	
+			</div>
+
+			<div class="row">&nbsp;</div>
+
+			<div class="row">
+				<div class="col-lg-2"></div>
+				<div class="col-lg-8">
+					<div class="input-group">
+						<div class="input-group-btn">
+							<button type="button" class="btn btn-default dropdown-toggle"
+								data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false">
+								Select City <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+								<li><a href="#">Trivandrum</a></li>
+								<li><a href="#">Kollam</a></li>
+								<li><a href="#">Cochin</a></li>
+								<li><a href="#">Kozhikodu</a></li>
+							</ul>
+						</div>
+					
+						<input type="text" class="form-control search-input" aria-label="...">
+						<span class="input-group-btn"> 
+							<a href="javascript:void(0)" class="btn btn-raised btn-lg btn-primary">Search</a>
+						</span>
+					</div>
+
+				</div>
+				<div class="col-lg-2"></div>
+			</div>
+
+
+			<!--   <div ng-switch="vm.isAuthenticated()">
                 <div class="alert alert-success" ng-switch-when="true">
                     You are logged in as user "{{vm.account.login}}".
                 </div>
@@ -20,22 +57,14 @@
                     You don't have an account yet? <a class="alert-link" ui-sref="register">Register a new account</a>
                 </div>
             </div>
+             -->
 
-            <p>
-                If you have any question on JHipster:
-            </p>
 
-            <ul>
-                <li><a href="http://jhipster.github.io/" target="_blank">JHipster homepage</a></li>
-                <li><a href="http://stackoverflow.com/tags/jhipster/info" target="_blank">JHipster on Stack Overflow</a></li>
-                <li><a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank">JHipster bug tracker</a></li>
-                <li><a href="https://gitter.im/jhipster/generator-jhipster" target="_blank">JHipster public chat room</a></li>
-                <li><a href="https://twitter.com/java_hipster" target="_blank" >follow @java_hipster on Twitter</a></li>
-            </ul>
-
-            <p>
-             <span>If you like JHipster, don't forget to give us a star on </span>&nbsp;<a href="https://github.com/jhipster/generator-jhipster" target="_blank">Github</a>!
-            </p>
-        </div>
-    </div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<span class="city img-responsive img-rounded center-block"></span>
+		</div>
+	</div>
 </div>

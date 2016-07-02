@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-
+    $.material.init()
     angular
         .module('rentApp', [
             'ngStorage', 
@@ -16,7 +16,7 @@
             // jhipster-needle-angularjs-add-module JHipster will add new module here
             'angular-loading-bar'
         ])
-        .run(run);
+        .run(run);    	
 
     run.$inject = ['stateHandler'];
 

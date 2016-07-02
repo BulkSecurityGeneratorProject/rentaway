@@ -50,8 +50,8 @@ spring:
 
         # see https://apps.twitter.com/app/
         twitter:
-            clientId: xxx
-            clientSecret: xxx
+            clientId: yW5lxrw4diSZFD9Nk0anxQ
+            clientSecret: rY1y4TRVX6TmXECR716ReestjzDvh9XK6GXptcF2g0
 
         # jhipster-needle-add-social-configuration
 
