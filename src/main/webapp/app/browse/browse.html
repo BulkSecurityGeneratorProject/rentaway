@@ -1,0 +1,20 @@
+<div class="row">
+	<div ng-repeat="house in vm.houses track by house.id"
+		class="col-md-3">
+		<div class="card">
+			<div class="card-image">
+				<img class="img-responsive" src="content/images/room-sample.jpg">
+				<span class="card-title">House {{house.houseId}}</span>
+			</div>
+
+			<div class="card-content">
+				<p>{{house.houseType}} for {{house.houseFor}}</p>
+			</div>
+
+			<div class="card-action">
+				<a href="#" target="new_blank">Preview</a> 
+				<a href="#" target="new_blank">Compare</a>
+			</div>
+		</div>
+	</div>
+</div>

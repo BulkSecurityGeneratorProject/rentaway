@@ -5,9 +5,9 @@
         .module('rentApp')
         .controller('NavbarController', NavbarController);
 
-    NavbarController.$inject = ['$state', 'Auth', 'Principal', 'ProfileService', 'LoginService'];
+    NavbarController.$inject = ['$scope', '$state', 'Auth', 'Principal', 'ProfileService', 'LoginService', 'RenatawayService'];
 
-    function NavbarController ($state, Auth, Principal, ProfileService, LoginService) {
+    function NavbarController ($scope, $state, Auth, Principal, ProfileService, LoginService, RenatawayService) {
         var vm = this;
 
         vm.isNavbarCollapsed = true;
@@ -17,13 +17,17 @@
             vm.inProduction = response.inProduction;
             vm.swaggerDisabled = response.swaggerDisabled;
         });
+        
+       /* RenatawayService.getRentawayInfo().then(function(response) {
+        	vm.googleSearchKey = response.searchkey;
+        });*/
 
         vm.login = login;
         vm.logout = logout;
         vm.toggleNavbar = toggleNavbar;
         vm.collapseNavbar = collapseNavbar;
         vm.$state = $state;
-
+        
         function login() {
             collapseNavbar();
             LoginService.open();
@@ -42,5 +46,10 @@
         function collapseNavbar() {
             vm.isNavbarCollapsed = true;
         }
+        
+    	//Google address
+        $scope.result1 = '';
+        $scope.options1 = null;
+        $scope.details1 = '';
     }
 })();

@@ -1,0 +1,34 @@
+
+<div>
+    <h2><span>Location</span> {{vm.location.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Location Id</span></dt>
+        <dd>
+            <span>{{vm.location.locationId}}</span>
+        </dd>
+        <dt><span>Street Address</span></dt>
+        <dd>
+            <span>{{vm.location.streetAddress}}</span>
+        </dd>
+        <dt><span>Postal Code</span></dt>
+        <dd>
+            <span>{{vm.location.postalCode}}</span>
+        </dd>
+        <dt><span>City</span></dt>
+        <dd>
+            <span>{{vm.location.city}}</span>
+        </dd>
+        <dt><span>State Province</span></dt>
+        <dd>
+            <span>{{vm.location.stateProvince}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

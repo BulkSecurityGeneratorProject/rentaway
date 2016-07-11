@@ -7,7 +7,7 @@
             'ngResource',
             'ngCookies',
             'ngAria',
-            'ngCacheBuster',
+            'ngCacheBuster',            
             'ngFileUpload',
             'ui.bootstrap',
             'ui.bootstrap.datetimepicker',
@@ -21,6 +21,6 @@
     run.$inject = ['stateHandler'];
 
     function run(stateHandler) {
-        stateHandler.initialize();
+        stateHandler.initialize();       
     }
 })();

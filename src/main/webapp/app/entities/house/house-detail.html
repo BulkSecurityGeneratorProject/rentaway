@@ -1,0 +1,46 @@
+
+<div>
+    <h2><span>House</span> {{vm.house.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>House Id</span></dt>
+        <dd>
+            <span>{{vm.house.houseId}}</span>
+        </dd>
+        <dt><span>House Type</span></dt>
+        <dd>
+            <span>{{vm.house.houseType}}</span>
+        </dd>
+        <dt><span>House For</span></dt>
+        <dd>
+            <span translate="{{'rentApp.GENDERFOR.' + vm.house.houseFor}}">{{vm.house.houseFor}}</span>
+        </dd>
+        <dt><span>No Of Rooms</span></dt>
+        <dd>
+            <span>{{vm.house.noOfRooms}}</span>
+        </dd>
+        <dt><span>Food Preference</span></dt>
+        <dd>
+            <span>{{vm.house.foodPreference}}</span>
+        </dd>
+        <dt><span>Rent To Be Paid</span></dt>
+        <dd>
+            <span>{{vm.house.rentToBePaid}}</span>
+        </dd>
+        <dt><span>Rules</span></dt>
+        <dd>
+            <span>{{vm.house.rules}}</span>
+        </dd>
+        <dt><span>Address</span></dt>
+        <dd>
+            <a ui-sref="address-detail({id:vm.house.address.id})">{{vm.house.address.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

@@ -1,0 +1,47 @@
+
+entity Region {
+	regionId Long,
+	region String required
+}
+
+entity Country {
+	countryId Long,
+	country String required
+}
+
+entity Location {
+	locationId Long,
+	streetAddress String required,
+	postalCode String required,
+	city String required,
+	stateProvince String required
+}
+entity Address {
+	addressId Long,
+	streetName String required,
+    zipCode Long required,
+    state String required,    
+}
+enum GENDERFOR {
+    BOYS, GIRLS
+}
+entity House {
+	houseId String,
+    houseType String required,
+    houseFor GENDERFOR required,
+    noOfRooms Long required,
+    foodPreference String,
+    rentToBePaid String required,    
+    rules String
+}
+
+relationship OneToOne {
+	House{address} to Address
+}
+relationship OneToOne {
+	Address{Country} to Country
+}
+relationship OneToOne {
+	Address{Location} to Location
+}
+

@@ -29,11 +29,11 @@
     <div class="container-fluid">
         <div class="well search-panel" ui-view="content">
             <!-- Angular views -->
-        </div>
-
-        <div ui-view="footer" class="footer" ng-cloak>            
-        </div>
+        </div>	
+        <div ui-view="footer" class="footer" ng-cloak>	                    
     </div>
+    
+     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=&libraries=places"></script>
 
     <!-- Google Analytics: uncomment and change UA-XXXXX-X to be your site's ID.
     <script>
@@ -74,6 +74,7 @@
     <!-- inject:js -->
     <script src="app/app.module.js"></script>
     <script src="app/services/user/user.service.js"></script>
+    <script src="app/services/profiles/rentaway.service.js"></script>
     <script src="app/services/profiles/profile.service.js"></script>
     <script src="app/services/profiles/page-ribbon.directive.js"></script>
     <script src="app/services/auth/sessions.service.js"></script>
@@ -88,12 +89,48 @@
     <script src="app/services/auth/auth.service.js"></script>
     <script src="app/services/auth/activate.service.js"></script>
     <script src="app/services/auth/account.service.js"></script>
+    <script src="app/layouts/navbar/ngAutocomplete.js"></script>
     <script src="app/layouts/navbar/navbar.controller.js"></script>
     <script src="app/layouts/navbar/active-link.directive.js"></script>
     <script src="app/layouts/error/error.state.js"></script>
     <script src="app/home/home.state.js"></script>
     <script src="app/home/home.controller.js"></script>
+    <script src="app/entities/region/region-dialog.controller.js"></script>
+    <script src="app/entities/region/region-detail.controller.js"></script>
+    <script src="app/entities/region/region-delete-dialog.controller.js"></script>
+    <script src="app/entities/region/region.state.js"></script>
+    <script src="app/entities/region/region.service.js"></script>
+    <script src="app/entities/region/region.search.service.js"></script>
+    <script src="app/entities/region/region.controller.js"></script>
+    <script src="app/entities/location/location-dialog.controller.js"></script>
+    <script src="app/entities/location/location-detail.controller.js"></script>
+    <script src="app/entities/location/location-delete-dialog.controller.js"></script>
+    <script src="app/entities/location/location.state.js"></script>
+    <script src="app/entities/location/location.service.js"></script>
+    <script src="app/entities/location/location.search.service.js"></script>
+    <script src="app/entities/location/location.controller.js"></script>
+    <script src="app/entities/house/house-dialog.controller.js"></script>
+    <script src="app/entities/house/house-detail.controller.js"></script>
+    <script src="app/entities/house/house-delete-dialog.controller.js"></script>
+    <script src="app/entities/house/house.state.js"></script>
+    <script src="app/entities/house/house.service.js"></script>
+    <script src="app/entities/house/house.search.service.js"></script>
+    <script src="app/entities/house/house.controller.js"></script>
     <script src="app/entities/entity.state.js"></script>
+    <script src="app/entities/country/country-dialog.controller.js"></script>
+    <script src="app/entities/country/country-detail.controller.js"></script>
+    <script src="app/entities/country/country-delete-dialog.controller.js"></script>
+    <script src="app/entities/country/country.state.js"></script>
+    <script src="app/entities/country/country.service.js"></script>
+    <script src="app/entities/country/country.search.service.js"></script>
+    <script src="app/entities/country/country.controller.js"></script>
+    <script src="app/entities/address/address-dialog.controller.js"></script>
+    <script src="app/entities/address/address-detail.controller.js"></script>
+    <script src="app/entities/address/address-delete-dialog.controller.js"></script>
+    <script src="app/entities/address/address.state.js"></script>
+    <script src="app/entities/address/address.service.js"></script>
+    <script src="app/entities/address/address.search.service.js"></script>
+    <script src="app/entities/address/address.controller.js"></script>
     <script src="app/components/util/truncate-words.filter.js"></script>
     <script src="app/components/util/truncate-characters.filter.js"></script>
     <script src="app/components/util/sort-by.directive.js"></script>
@@ -114,6 +151,8 @@
     <script src="app/components/alert/alert-error.directive.js"></script>
     <script src="app/components/alert/alert.service.js"></script>
     <script src="app/components/alert/alert.directive.js"></script>
+    <script src="app/browse/browse.state.js"></script>
+    <script src="app/browse/browse.controller.js"></script>
     <script src="app/blocks/interceptor/notification.interceptor.js"></script>
     <script src="app/blocks/interceptor/errorhandler.interceptor.js"></script>
     <script src="app/blocks/interceptor/auth-expired.interceptor.js"></script>

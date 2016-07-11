@@ -1,0 +1,68 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipType": "one-to-one",
+      "relationshipName": "address",
+      "otherEntityName": "address",
+      "otherEntityField": "id",
+      "ownerSide": true,
+      "otherEntityRelationshipName": "house"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "houseId",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "houseType",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "houseFor",
+      "fieldType": "GENDERFOR",
+      "fieldValues": "BOYS,GIRLS",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "noOfRooms",
+      "fieldType": "Long",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "foodPreference",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "rentToBePaid",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 7,
+      "fieldName": "rules",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160705041349",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "entityTableName": "house"
+}

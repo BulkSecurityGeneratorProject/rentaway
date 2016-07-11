@@ -1,0 +1,103 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myHouseLabel">Create or edit a House</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.house.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.house.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_houseId">House Id</label>
+            <input type="text" class="form-control" name="houseId" id="field_houseId"
+                    ng-model="vm.house.houseId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_houseType">House Type</label>
+            <input type="text" class="form-control" name="houseType" id="field_houseType"
+                    ng-model="vm.house.houseType"
+                    required />
+            <div ng-show="editForm.houseType.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.houseType.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_houseFor">House For</label>
+            <select class="form-control" name="houseFor" ng-model="vm.house.houseFor" id="field_houseFor" required>
+                <option value="BOYS">BOYS</option>
+                <option value="GIRLS">GIRLS</option>
+            </select>
+            <div ng-show="editForm.houseFor.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.houseFor.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_noOfRooms">No Of Rooms</label>
+            <input type="number" class="form-control" name="noOfRooms" id="field_noOfRooms"
+                    ng-model="vm.house.noOfRooms"
+                    required />
+            <div ng-show="editForm.noOfRooms.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.noOfRooms.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.noOfRooms.$error.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_foodPreference">Food Preference</label>
+            <input type="text" class="form-control" name="foodPreference" id="field_foodPreference"
+                    ng-model="vm.house.foodPreference"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_rentToBePaid">Rent To Be Paid</label>
+            <input type="text" class="form-control" name="rentToBePaid" id="field_rentToBePaid"
+                    ng-model="vm.house.rentToBePaid"
+                    required />
+            <div ng-show="editForm.rentToBePaid.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.rentToBePaid.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_rules">Rules</label>
+            <input type="text" class="form-control" name="rules" id="field_rules"
+                    ng-model="vm.house.rules"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label for="field_address">Address</label>
+            <select class="form-control" id="field_address" name="address" ng-model="vm.house.address" ng-options="address as address.id for address in vm.addresses | orderBy:'id' track by address.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

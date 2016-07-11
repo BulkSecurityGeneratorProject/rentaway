@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+   <changeSet author="Shinu_Suresh01 (generated)" id="1467694683752-1">
+      <createTable tableName="address">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="addressPK"/>
+         </column>
+         <column name="address_id" type="BIGINT"/>
+         <column name="state" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="street_name" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="zip_code" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="country_id" type="BIGINT"/>
+         <column name="location_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="Shinu_Suresh01 (generated)" id="1467694683752-2">
+      <createTable tableName="country">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="countryPK"/>
+         </column>
+         <column name="country" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="country_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="Shinu_Suresh01 (generated)" id="1467694683752-3">
+      <createTable tableName="house">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="housePK"/>
+         </column>
+         <column name="food_preference" type="VARCHAR(255)"/>
+         <column name="house_for" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="house_id" type="VARCHAR(255)"/>
+         <column name="house_type" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="no_of_rooms" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="rent_to_be_paid" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="rules" type="VARCHAR(255)"/>
+         <column name="address_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="Shinu_Suresh01 (generated)" id="1467694683752-4">
+      <createTable tableName="location">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="locationPK"/>
+         </column>
+         <column name="city" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="location_id" type="BIGINT"/>
+         <column name="postal_code" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="state_province" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="street_address" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="Shinu_Suresh01 (generated)" id="1467694683752-5">
+      <addColumn tableName="region">
+         <column name="region" type="varchar(255)">
+            <constraints nullable="false"/>
+         </column>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Shinu_Suresh01 (generated)" id="1467694683752-6">
+      <addUniqueConstraint columnNames="country_id"
+                           constraintName="UC_ADDRESSCOUNTRY_ID_COL"
+                           tableName="address"/>
+   </changeSet>
+   <changeSet author="Shinu_Suresh01 (generated)" id="1467694683752-7">
+      <addUniqueConstraint columnNames="location_id"
+                           constraintName="UC_ADDRESSLOCATION_ID_COL"
+                           tableName="address"/>
+   </changeSet>
+   <changeSet author="Shinu_Suresh01 (generated)" id="1467694683752-8">
+      <addUniqueConstraint columnNames="address_id"
+                           constraintName="UC_HOUSEADDRESS_ID_COL"
+                           tableName="house"/>
+   </changeSet>
+   <changeSet author="Shinu_Suresh01 (generated)" id="1467694683752-9">
+      <addForeignKeyConstraint baseColumnNames="address_id"
+                               baseTableName="house"
+                               constraintName="FK_2bidy1sc9fy2m9pbop21k5anq"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="address"/>
+   </changeSet>
+   <changeSet author="Shinu_Suresh01 (generated)" id="1467694683752-10">
+      <addForeignKeyConstraint baseColumnNames="location_id"
+                               baseTableName="address"
+                               constraintName="FK_86b0vwejivaithuggl3ih91d1"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="location"/>
+   </changeSet>
+   <changeSet author="Shinu_Suresh01 (generated)" id="1467694683752-11">
+      <addForeignKeyConstraint baseColumnNames="country_id"
+                               baseTableName="address"
+                               constraintName="FK_nyyg5dlcs74rm1girctd3mubi"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="country"/>
+   </changeSet>
+   <changeSet author="Shinu_Suresh01 (generated)" id="1467694683752-12">
+      <dropUniqueConstraint constraintName="CONSTRAINT_7" tableName="JHI_SOCIAL_USER_CONNECTION"/>
+   </changeSet>
+   <changeSet author="Shinu_Suresh01 (generated)" id="1467694683752-13">
+      <dropUniqueConstraint constraintName="CONSTRAINT_71" tableName="JHI_SOCIAL_USER_CONNECTION"/>
+   </changeSet>
+   <changeSet author="Shinu_Suresh01 (generated)" id="1467694683752-14">
+      <dropColumn columnName="REGION_NAME" tableName="REGION"/>
+   </changeSet>
+   <changeSet author="Shinu_Suresh01 (generated)" id="1467694683752-15">
+      <dropDefaultValue columnDataType="timestamp"
+                        columnName="created_date"
+                        tableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="Shinu_Suresh01 (generated)" id="1467694683752-16">
+      <dropNotNullConstraint columnDataType="bigint" columnName="region_id" tableName="region"/>
+   </changeSet>
+</databaseChangeLog>

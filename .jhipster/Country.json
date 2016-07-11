@@ -1,0 +1,23 @@
+{
+  "relationships": [],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "countryId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "country",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "changelogDate": "20160705041346",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "entityTableName": "country"
+}

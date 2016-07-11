@@ -92,3 +92,11 @@ jhipster:
     ribbon:
         # comma seperated list of profiles to show a ribbon on the GUI
         displayOnActiveProfiles: dev
+
+# ===================================================================
+# Rent away Application specific properties
+# ===================================================================
+
+rentaway:
+    google:
+        searchKey: AIzaSyBpSQ_4IroOVj5iJvrxtOHSQxgfrWlAFlU

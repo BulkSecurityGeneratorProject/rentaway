@@ -84,3 +84,11 @@ jhipster:
         license:
         licenseUrl:
         enabled: false
+
+# ===================================================================
+# Rent away Application specific properties
+# ===================================================================
+
+rentaway:
+    google:
+        searchKey: AIzaSyBpSQ_4IroOVj5iJvrxtOHSQxgfrWlAFlU

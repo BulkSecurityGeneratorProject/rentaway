@@ -172,7 +172,8 @@ gulp.task('ngconstant:dev', function () {
         name: 'rentApp',
         constants: {
             VERSION: util.parseVersion(),
-            DEBUG_INFO_ENABLED: true
+            DEBUG_INFO_ENABLED: true,
+            GOOGLE_KEY: 'AIzaSyBpSQ_4IroOVj5iJvrxtOHSQxgfrWlAFlU'
         },
         template: config.constantTemplate,
         stream: true
@@ -186,7 +187,8 @@ gulp.task('ngconstant:prod', function () {
         name: 'rentApp',
         constants: {
             VERSION: util.parseVersion(),
-            DEBUG_INFO_ENABLED: false
+            DEBUG_INFO_ENABLED: false,
+            GOOGLE_KEY: 'AIzaSyBpSQ_4IroOVj5iJvrxtOHSQxgfrWlAFlU'
         },
         template: config.constantTemplate,
         stream: true

@@ -1,0 +1,58 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipType": "one-to-one",
+      "relationshipName": "country",
+      "otherEntityName": "country",
+      "otherEntityField": "id",
+      "ownerSide": true,
+      "otherEntityRelationshipName": "address"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipType": "one-to-one",
+      "relationshipName": "location",
+      "otherEntityName": "location",
+      "otherEntityField": "id",
+      "ownerSide": true,
+      "otherEntityRelationshipName": "address"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "addressId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "streetName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "zipCode",
+      "fieldType": "Long",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "state",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "changelogDate": "20160705041348",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "entityTableName": "address"
+}

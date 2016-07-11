@@ -3,6 +3,7 @@ package com.thoughtservice.rent;
 import com.thoughtservice.rent.config.Constants;
 import com.thoughtservice.rent.config.DefaultProfileUtil;
 import com.thoughtservice.rent.config.JHipsterProperties;
+import com.thoughtservice.rent.config.RentawayProperties;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +24,7 @@ import java.util.Collection;
 
 @ComponentScan
 @EnableAutoConfiguration(exclude = { MetricFilterAutoConfiguration.class, MetricRepositoryAutoConfiguration.class })
-@EnableConfigurationProperties({ JHipsterProperties.class, LiquibaseProperties.class })
+@EnableConfigurationProperties({ JHipsterProperties.class, RentawayProperties.class, LiquibaseProperties.class })
 public class RentApp {
 
     private static final Logger log = LoggerFactory.getLogger(RentApp.class);

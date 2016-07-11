@@ -1,0 +1,84 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myAddressLabel">Create or edit a Address</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.address.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.address.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_addressId">Address Id</label>
+            <input type="number" class="form-control" name="addressId" id="field_addressId"
+                    ng-model="vm.address.addressId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_streetName">Street Name</label>
+            <input type="text" class="form-control" name="streetName" id="field_streetName"
+                    ng-model="vm.address.streetName"
+                    required />
+            <div ng-show="editForm.streetName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.streetName.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_zipCode">Zip Code</label>
+            <input type="number" class="form-control" name="zipCode" id="field_zipCode"
+                    ng-model="vm.address.zipCode"
+                    required />
+            <div ng-show="editForm.zipCode.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.zipCode.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.zipCode.$error.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_state">State</label>
+            <input type="text" class="form-control" name="state" id="field_state"
+                    ng-model="vm.address.state"
+                    required />
+            <div ng-show="editForm.state.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.state.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="field_country">Country</label>
+            <select class="form-control" id="field_country" name="country" ng-model="vm.address.country" ng-options="country as country.id for country in vm.countries | orderBy:'id' track by country.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_location">Location</label>
+            <select class="form-control" id="field_location" name="location" ng-model="vm.address.location" ng-options="location as location.id for location in vm.locations | orderBy:'id' track by location.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>
